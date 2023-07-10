@@ -1,2 +1,2 @@
 #!/bim/bash
-rm -r *.js ./
+find . type f -name "*.js" -delete
