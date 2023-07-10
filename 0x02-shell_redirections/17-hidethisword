@@ -1,2 +1,2 @@
 #!/bim/bash
-grep -v "bin" /etc/passwd
+grep -iv "bin" /etc/passwd
