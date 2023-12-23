@@ -41,7 +41,7 @@ int main(void)
 			exit(0);
 	}
 
-	infinite_while();
+	infinite_loop();
 
 	return (0);
 }
