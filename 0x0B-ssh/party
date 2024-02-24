@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+#Bashscript that add party.pub public key file content to my server
+
+cat party.pub | ssh
