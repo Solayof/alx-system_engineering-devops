@@ -11,7 +11,6 @@ sudo apt-get -y install haproxy
 
 config=$"frontend balancer
 	bind *:80
-	mode http
 	default_backend lb-backends"
 
 config1=$"backend lb-backends
