@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+
+sudo apt -y update
+
+sudo apt-get -y install haproxy
+
+#server1="152440-web-01"
+#server1_ip="52.86.116.134"
+#server2="152440-web-02"
+#server2_ip="100.26.174.107"
+
+config=$"frontend balancer
+	bind *:80
+	default_backend lb-backends"
+
+config1=$"backend lb-backends
+	balance roundrobin
+	server 152440-web-01 52.86.116.134:80 check
+	server 152440-web-02 100.26.174.107:80 check"
+
+
+sudo cp -a /etc/haproxy/haproxy.cfg{,.orig}
+sudo su << POWER
+	echo  -e "\n$config\n$config1" >> /etc/haproxy/haproxy.cfg
+POWER
+sudo service haproxy restart
