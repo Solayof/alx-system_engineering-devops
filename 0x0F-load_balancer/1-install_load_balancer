@@ -17,7 +17,7 @@ config1=$"backend lb-backends
 	balance roundrobin
 	server 152440-web-01 52.86.116.134:80 check
 	server 152440-web-02 100.26.174.107:80 check"
-"
+
 
 sudo cp -a /etc/haproxy/haproxy.cfg{,.orig}
 sudo su << POWER
