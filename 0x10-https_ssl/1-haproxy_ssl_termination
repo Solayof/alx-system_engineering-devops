@@ -32,17 +32,17 @@ defaults
         errorfile 503 /etc/haproxy/errors/503.http
         errorfile 504 /etc/haproxy/errors/504.http
 
-# config for www.airbnbclone.tech fronted and backend load balancing
-frontend airbnbclone-front1
+# config for www.solayof.tech fronted and backend load balancing
+frontend solayof-front1
         bind    *:80
-        default_backend airbnbclone-back
+        default_backend solayof-back
 
-frontend airbnbclone-front2
-        bind *:443 ssl crt /etc/letsencrypt/live/www.airbnbclone.tech/all.pem
-        default_backend airbnbclone-back
+frontend solayof-front2
+        bind *:443 ssl crt /etc/letsencrypt/live/www.solayof.tech/all.pem
+        default_backend solayof-back
 
-backend airbnbclone-back
+backend solayof-back
         balance roundrobin
-        server 6366-web-01 44.200.178.81:80 check
-        server 6366-web-02 35.175.65.219:80 check
+        server 152440-web-01 52.86.116.134:80 check
+        server 152440-web-02 100.26.174.107:80 check
 # End of settings
