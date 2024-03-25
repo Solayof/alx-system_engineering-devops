@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-#A script that return info a given employee id
+"""A script that return info a given employee id"""
 from requests import get
 from sys import argv
 
