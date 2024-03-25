@@ -13,5 +13,5 @@ if __name__ == "__main__":
         json.dump({argv[1]: [{
                 "task": t.get("title"),
                 "completed": t.get("completed"),
-                "username": argv[1]
+                "username": user.get("username")
             } for t in todos]}, f)
