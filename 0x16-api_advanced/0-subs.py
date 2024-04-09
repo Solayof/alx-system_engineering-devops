@@ -18,10 +18,3 @@ def number_of_subscribers(subreddit):
         subs = res.get('data').get('subscribers')
         return subs
     return 0
-
-
-if __name__ == "__main__":
-    print("number of programming subscribers: {}".format(
-        number_of_subscribers("programming")))
-    print("number of fake_subreddit subscribers: {}".format(
-        number_of_subscribers("fake_subreddit")))
