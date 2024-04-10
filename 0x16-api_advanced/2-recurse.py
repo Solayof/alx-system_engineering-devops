@@ -12,7 +12,7 @@ def recurse(subreddit, hot_list=[], after=""):
         return None
 
     url = 'http://www.reddit.com/r/{}/hot.json'.format(subreddit)
-    headers = {'User-Agent': 'ALX-advanced_APIi/by Ajiboye Adeleye pius'}
+    headers = {'User-Agent': 'solayof'}
     params = {
             'after': after,
             'limit': 100

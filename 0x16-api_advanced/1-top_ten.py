@@ -11,7 +11,7 @@ def top_ten(subreddit):
     if subreddit is None or type(subreddit) is not str:
         return print(None)
     url = "http://www.reddit.com/r/{}/hot.json".format(subreddit)
-    headers = {'User-Agent': 'Ajiboye Adeleye/ALX-Api-Advanced'}
+    headers = {'User-Agent': 'solayof'}
     params = {'limit': 10}
     try:
         response = requests.get(url, headers=headers, params=params)
