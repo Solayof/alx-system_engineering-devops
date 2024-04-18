@@ -1,13 +1,9 @@
-#change the ulimits for nginx
-
-exec {'change the hard nofile'
-  command => 'sed -i "s/5/1000/" /etc/security/limits.conf',
-  path   => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin',
-    onlyif  => 'grep -q \'holberton hard nofile 5\' /etc/security/limits.conf',
-}
-
-exec {'change the soft nofile'
-        command => 'sed -i "s/4/1000/" /etc/security/limits.conf',
-        path    => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin',
-    onlyif  => 'grep -q \'holberton soft nofile 4\' /etc/security/limits.conf',
+# puppet code to change user open file limit
+exec { 'Fix-holberton-nofile-limits':
+  command => 'sed -i "s/^holberton hard nofile 5/holberton hard nofile 100/; \
+               s/^holberton soft nofile 4/holberton soft nofile 99/" \
+               /etc/security/limits.conf',
+  onlyif  => 'grep -q \'holberton hard nofile 5\' /etc/security/limits.conf && \
+               grep -q \'holberton soft nofile 4\' /etc/security/limits.conf',
+  path    => '/bin/',
 }
